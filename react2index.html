@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script 
+crossorigin 
+src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+<script 
+crossorigin 
+src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<style>
+.orange-text {
+ color: orange;
+ font-weight: bold;
+}   
+.blue-text {
+ color: blue;
+ font-weight: bold;
+}  
+.green-text {
+ color: green;
+ font-weight: bold;
+}
+.red-text {
+ color: red;
+ font-weight: bold; 
+}
+</style>
+</head>
+<body>
+    <div id="root">Another not rendered dom</div>
+    <script>
+       
+        const reactRoot = ReactDOM.createRoot(document.getElementById('root')); //create react root using html root element
+        
+        const h1Elem = React.createElement('h1', {id:'elemh1', class:'orange-text'}, "I am the heading 1");//children is string
+        const h2Elem = React.createElement('h2', {id:'elemh2', class:'blue-text'}, "I am heading 2");//children is string
+        const h3Elem = React.createElement('h3', {id:'elemh3', class:'green-text'}, "I am heading 3");//children is string
+        const para = React.createElement('p', {id:'elemp', class:'red-text'}, "I am a para");//children is string
+        
+        const divReact = React.createElement('div', {id:'reactdiv'}, [h1Elem, h2Elem, h3Elem, para]);//children is other elems
+
+
+        
+
+        reactRoot.render(divReact);
+
+    </script>
+</body>
+</html>
